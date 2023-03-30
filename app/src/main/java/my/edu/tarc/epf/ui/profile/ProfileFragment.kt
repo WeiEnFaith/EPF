@@ -44,7 +44,7 @@ class ProfileFragment : Fragment(), MenuProvider {
         _binding = FragmentProfileBinding.inflate(inflater, container,false)
 
         //Let ProfileFragment to manage menu
-        val menuHost:MenuHost = requireActivity()
+        val menuHost: MenuHost = this.requireActivity()
         menuHost.addMenuProvider(this,viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         return binding.root
