@@ -52,6 +52,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
         onBackPressedDispatcher.addCallback(onBackPressedCallback)
+
+        //add event handler of navView
+        val view = navView.getHeaderView(0)
+        view.setOnClickListener{
+            findNavController(R.id.nav_host_fragment_content_main)
+                .navigate(R.id.nav_profile)
+            binding.drawerLayout.closeDrawers()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
